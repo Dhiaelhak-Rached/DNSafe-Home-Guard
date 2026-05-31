@@ -1,0 +1,22 @@
+; HomeGuard configuration template
+; Copy this file to config.ini and fill in your real values.
+
+[dns]
+listen_address = 127.0.0.1
+listen_port = 53
+upstream = 1.1.1.1
+upstream_port = 53
+
+[alert]
+parent_email = your-email@gmail.com
+smtp_server = smtp.gmail.com
+smtp_port = 587
+smtp_user = your-email@gmail.com
+smtp_password = YOUR_APP_PASSWORD_HERE
+child_name = Child
+rate_limit_minutes = 15
+
+[blocklist]
+urls = https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn-only/hosts,https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts
+cache_file = blocklist_cache.json.gz
+refresh_days = 7
